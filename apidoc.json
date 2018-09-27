@@ -1,0 +1,8 @@
+{
+    "name": "RESTful API for test task",
+    "version": "0.0.1",
+    "description": "RESTful API for test task",
+    "title": "Test",
+    "url" : "http://test.beta/api",
+    "sampleUrl":"/api"
+}
