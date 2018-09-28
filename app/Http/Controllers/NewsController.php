@@ -69,7 +69,7 @@ class NewsController extends Controller
         $v = $request->validate([
             'name' => 'required',
             'description' => 'required',
-            'category_id' => 'required|number',
+            'category_id' => 'required|numeric',
         ]);
         $category = Category::find($request->category_id);
             if ($category){
@@ -126,7 +126,7 @@ class NewsController extends Controller
         $v = $request->validate([
             'name' => 'required',
             'description' => 'required',
-            'category_id' => 'required|number',
+            'category_id' => 'required|numeric',
         ]);
         if (Auth::user()->hasRole('admin') || Auth::user()->hasRole('moderator')) {
             $news = News::find($id);
