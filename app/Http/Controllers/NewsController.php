@@ -55,9 +55,9 @@ class NewsController extends Controller
      * @apiName Add news
      * @apiVersion 0.1.0
      * @apiGroup News
-     * @apiParam {String} name name of news
-     * @apiParam {String} description description of news
-     * @apiParam {Number} category_id category_id for news
+     * @apiParam {String} name  news name
+     * @apiParam {String} description news description
+     * @apiParam {Number} category_id news category_id
      * @apiPermission Authorization
      * @apiHeader  Authorization token
      * @apiSampleRequest  /news
@@ -110,9 +110,9 @@ class NewsController extends Controller
      * @apiName Update news
      * @apiVersion 0.1.0
      * @apiGroup News
-     * @apiParam {String} name name of news
-     * @apiParam {String} description description of news
-     * @apiParam {Number} category_id category_id for news
+     * @apiParam {String} name  news name
+     * @apiParam {String} description  news description
+     * @apiParam {Number} category_id news category_id
      * @apiPermission Authorization
      * @apiHeader  Authorization token
      * @apiSampleRequest  /news/{id}

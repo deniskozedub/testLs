@@ -30,10 +30,10 @@ class RegisterController extends Controller
      * @apiName Registration
      * @apiVersion 0.1.0
      * @apiGroup Auth
-     * @apiParam {String} name student's name
-     * @apiParam {String} email student's email UNIQUE
-     * @apiParam {String} password student's password
-     * @apiParam {String} password_confirmation confirm student's password
+     * @apiParam {String} name user name
+     * @apiParam {String} email user UNIQUE
+     * @apiParam {String} password user password
+     * @apiParam {String} password_confirmation confirm user password
      * @apiSampleRequest /register
      *
      */

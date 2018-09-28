@@ -37,7 +37,7 @@ class CategoryController extends Controller
      * @apiName Add category
      * @apiVersion 0.1.0
      * @apiGroup Category
-     * @apiParam {String} name name of category
+     * @apiParam {String} name category name
      * @apiPermission Authorization
      * @apiHeader  Authorization token
      * @apiSampleRequest  /category
@@ -85,7 +85,7 @@ class CategoryController extends Controller
      * @apiName Update category
      * @apiVersion 0.1.0
      * @apiGroup Category
-     * @apiParam {String} name name of category
+     * @apiParam {String} name  category name
      * @apiPermission Authorization
      * @apiHeader  Authorization token
      * @apiSampleRequest  /category/{id}
