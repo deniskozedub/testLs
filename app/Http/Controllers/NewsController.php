@@ -69,7 +69,7 @@ class NewsController extends Controller
         $v = $request->validate([
             'name' => 'required',
             'description' => 'required',
-            'category_id' => 'required',
+            'category_id' => 'required|number',
         ]);
         $category = Category::find($request->category_id);
             if ($category){
@@ -95,11 +95,13 @@ class NewsController extends Controller
      *
      */
 
-    public function show(News $news)
+    public function show($id)
     {
         if (Auth::user()->hasRole('admin')) {
-            $news = News::with('category')->find($news->id);
-            return response()->json(['news' => $news]);
+            $news = News::with('category')->find($id);
+            if ($news)
+                return response()->json(['news' => $news]);
+            return response()->json(['message' => 'news with such ID not found']);
         }
         return response()->json(['message' => 'this action denies for you!!!']);
     }
@@ -124,6 +126,7 @@ class NewsController extends Controller
         $v = $request->validate([
             'name' => 'required',
             'description' => 'required',
+            'category_id' => 'required|number',
         ]);
         if (Auth::user()->hasRole('admin') || Auth::user()->hasRole('moderator')) {
             $news = News::find($id);
