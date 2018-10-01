@@ -15,12 +15,12 @@ use Illuminate\Http\Request;
 
 Route::post('register','Auth\RegisterController@create');
 Route::post('login','Auth\LoginController@login');
-Route::get('/guest-news','NewsController@indexForGuest');
+Route::get('guest-news','Api\GuestController@index');
 
 
 
 Route::group(['middleware' => 'auth:api'],function (){
 
-        Route::resource('category', 'CategoryController');
-        Route::resource('news', 'NewsController');
+        Route::resource('category', 'Api\CategoryController');
+        Route::resource('news', 'Api\NewsController');
 });
