@@ -1,33 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\News;
 use Illuminate\Http\Request;
-use App\Http\Middleware\Moderator;
 use Illuminate\Support\Facades\Auth;
 
 class NewsController extends Controller
 {
-
-    /**
-     * @api {get} /get-news Get news for guest
-     * @apiName Get news for guest
-     * @apiVersion 0.1.0
-     * @apiGroup Guest
-     * @apiSampleRequest  /get-news
-     *
-     */
-
-
-    public function indexForGuest() {
-        $news = News::with('category')
-            ->orderBy('id', 'desc')
-            ->get();
-        return response()->json(['news' => $news], 200);
-    }
-
     /**
      * @api {get} /news Get news
      * @apiName Get news
